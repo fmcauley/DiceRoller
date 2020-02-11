@@ -38,3 +38,12 @@ class MainActivity : AppCompatActivity() {
 
     }
 }
+
+/*
+*
+* Here you've changed the XML namespace of this attribute from the default android namespace to
+* the tools namespace. The tools namespace is used when you want to define placeholder content that
+* is only used in the preview or the design editor in Android Studio. Attributes using the tools
+* namespace are removed when you compile the app.
+*
+* */
