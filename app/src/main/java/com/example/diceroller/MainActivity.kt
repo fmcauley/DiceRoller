@@ -2,6 +2,7 @@ package com.example.diceroller
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.ContactsContract
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -13,6 +14,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var rollButton : Button
     private lateinit var diceImage: ImageView
+    private lateinit var diceImage2: ImageView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,10 +23,16 @@ class MainActivity : AppCompatActivity() {
         rollButton= findViewById(R.id.roll_button)
         rollButton.setOnClickListener{ rollDice() }
         diceImage = findViewById(R.id.dice_image)
+        diceImage2 = findViewById(R.id.dice_image2)
 
     }
 
     private fun rollDice() {
+        diceImage.setImageResource(randomNumber())
+        diceImage2.setImageResource(randomNumber())
+    }
+
+    private fun randomNumber(): Int {
         val drawAbleResource = when ((1..6).random()) {
             1 -> R.drawable.dice_1
             2 -> R.drawable.dice_2
@@ -33,9 +41,7 @@ class MainActivity : AppCompatActivity() {
             5 -> R.drawable.dice_5
             else -> R.drawable.dice_6
         }
-
-        diceImage.setImageResource(drawAbleResource)
-
+        return drawAbleResource
     }
 }
 
