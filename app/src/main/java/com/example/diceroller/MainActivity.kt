@@ -47,3 +47,11 @@ class MainActivity : AppCompatActivity() {
 * namespace are removed when you compile the app.
 *
 * */
+
+/*
+*
+* The app:srcCompat attribute uses the Android X library to support vector drawables in older
+* versions of Android, back to API level 7.
+* */
+
+
